@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import EmojiPicker from "emoji-picker-react";
 import { useEffect, useState } from "react";
-import { Budget } from "../../budget/_components/BudgetList";
+import type { Budget } from "@/store/userBudgetStore";
 import { axiosInstance } from "@/lib/axios";
 import { toast } from "sonner";
 import axios from "axios";
