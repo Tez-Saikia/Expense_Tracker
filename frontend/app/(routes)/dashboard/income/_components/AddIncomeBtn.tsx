@@ -137,7 +137,7 @@ function AddIncomeBtn() {
             onClick={handleAddIncome}
             className="w-full cursor-pointer"
           >
-            Save Expense
+            Save Income
           </Button>
         </div>
       </DialogContent>
