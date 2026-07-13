@@ -5,8 +5,8 @@ import { axiosInstance } from "@/lib/axios";
 import DashboardCardsInfo from "./_components/DashboardCardsInfo";
 import { useAuthStore } from "@/store/useAuthStore";
 import BarChartDashboard from "./_components/BarChartDashboard";
-import { Budget } from "./budget/_components/BudgetList";
-import { Expense } from "./expense/_components/ExpenseListTableInsideBudget";
+import type { Budget } from "@/store/userBudgetStore";
+import type { Expense } from "@/store/userBudgetStore";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 
