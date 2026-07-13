@@ -22,6 +22,7 @@ interface Budget {
   updatedAt: string;
 }
 function DashboardLayout({ children }: DashboardLayoutProps) {
+  console.log("🔥 DASHBOARD LAYOUT LOADED");
   const [budgets, setBudgets] = useState<Budget[]>([]);
   const [loading, setLoading] = useState(true);
 
