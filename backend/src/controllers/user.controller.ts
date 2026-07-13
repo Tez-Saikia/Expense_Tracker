@@ -35,6 +35,7 @@ const generateRefreshAndAccessTokens = async (userId: string) => {
 const options = {
   httpOnly: true,
   secure: true,
+  sameSite: "none" as const,
 };
 
 const registerUser = asyncHandler(async (req: Request, res: Response) => {
@@ -97,9 +98,20 @@ const registerUser = asyncHandler(async (req: Request, res: Response) => {
     throw new ApiError(400, "User not found");
   }
 
-  return res
-    .status(201)
-    .json(new ApiResponse(201, "User created successfully 🎉", createdUser));
+const { accessToken, refreshToken } =
+  await generateRefreshAndAccessTokens(user._id.toString());
+
+return res
+  .status(201)
+  .cookie("accessToken", accessToken, options)
+  .cookie("refreshToken", refreshToken, options)
+  .json(
+    new ApiResponse(201, "User created successfully 🎉", {
+      user: createdUser,
+      accessToken,
+      refreshToken,
+    })
+  );
 });
 
 const loginUser = asyncHandler(async (req: Request, res: Response) => {
