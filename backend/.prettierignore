@@ -1,0 +1,20 @@
+# Ignore build outputs and artifacts
+dist/
+build/
+coverage/
+
+# Ignore dependencies and package locks
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore auto-generated or system files
+.next/
+.vercel/
+.env
+*.log
+
+# Ignore third-party or compiled code
+vendor/
+public/
