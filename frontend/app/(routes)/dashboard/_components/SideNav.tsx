@@ -62,8 +62,10 @@ function SideNav() {
 
       {/* Desktop Sidebar */}
       <div className="hidden md:flex h-screen w-65 flex-col border-r bg-white p-6 shadow-sm">
-        <Image src="/logo.svg" alt="logo" width={180} height={80} />
-
+        <Link href={"/"}>
+          <Image src="/logo.svg" alt="logo" width={180} height={80} />
+        </Link>
+        
         <div className="mt-12 flex-1">
           {sidebarMenu.map((menu) =>
             menu.isDialog ? (
